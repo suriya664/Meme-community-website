@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMCA Policy - Meme Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            pink: '#ff00ff',
+                            cyan: '#00ffff',
+                            green: '#00ff00',
+                            yellow: '#ffff00',
+                            purple: '#cc00ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-inter min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-neon-pink/30 sticky top-0 z-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-poppins font-bold bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-green bg-clip-text text-transparent">
+                    😂 Meme Community
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-neon-cyan transition">Home</a>
+                    <a href="categories.html" class="text-gray-300 hover:text-neon-cyan transition">Categories</a>
+                    <a href="search.html" class="text-gray-300 hover:text-neon-cyan transition">Search</a>
+                    <a href="profile.html" class="text-gray-300 hover:text-neon-cyan transition">Profile</a>
+                    <a href="login.html" class="text-gray-300 hover:text-neon-cyan transition">Login</a>
+                    <a href="about.html" class="text-gray-300 hover:text-neon-cyan transition">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-neon-cyan transition">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan" title="Toggle theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <a href="upload.html" class="bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+                </div>
+                <button class="lg:hidden text-neon-cyan text-2xl" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+        <!-- Mobile & Tablet Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-neon-pink/30 p-4 space-y-3">
+            <a href="index.html" class="block text-neon-cyan">Home</a>
+            <a href="categories.html" class="block text-gray-300">Categories</a>
+            <a href="search.html" class="block text-gray-300">Search</a>
+            <a href="profile.html" class="block text-gray-300">Profile</a>
+            <a href="login.html" class="block text-gray-300">Login</a>
+            <a href="about.html" class="block text-gray-300">About</a>
+            <a href="contact.html" class="block text-gray-300">Contact</a>
+            <button id="themeToggleMobile" class="block w-full text-left p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan">
+                <span id="themeIconMobile">🌙</span> Toggle Theme
+            </button>
+            <a href="upload.html" class="block w-full text-center bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <h1 class="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent text-center">
+            ⚖️ DMCA Policy
+        </h1>
+
+        <div class="space-y-6 text-gray-300 leading-relaxed">
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <p class="text-sm text-gray-400 mb-4">Last updated: January 2024</p>
+                <p class="mb-4">
+                    Meme Community respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). This policy outlines our procedures for handling copyright infringement claims.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-cyan text-center">Reporting Copyright Infringement</h2>
+                <p class="mb-4">
+                    If you believe that content on our platform infringes your copyright, please send a DMCA takedown notice to our designated agent with the following information:
+                </p>
+                <ul class="space-y-3 list-decimal list-inside">
+                    <li>A physical or electronic signature of the copyright owner or authorized agent</li>
+                    <li>Identification of the copyrighted work claimed to have been infringed</li>
+                    <li>Identification of the infringing material and its location on our platform (URL)</li>
+                    <li>Your contact information (name, address, phone, email)</li>
+                    <li>A statement that you have a good faith belief the use is not authorized</li>
+                    <li>A statement that the information is accurate and you are authorized to act on behalf of the copyright owner</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-green text-center">Counter-Notification</h2>
+                <p class="mb-4">
+                    If your content was removed due to a DMCA notice and you believe it was removed in error, you may send a counter-notification with:
+                </p>
+                <ul class="space-y-3 list-decimal list-inside">
+                    <li>Your physical or electronic signature</li>
+                    <li>Identification of the removed content and its location before removal</li>
+                    <li>A statement under penalty of perjury that the content was removed by mistake</li>
+                    <li>Your contact information</li>
+                    <li>Consent to the jurisdiction of your local federal court</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-yellow text-center">Fair Use & Memes</h2>
+                <p class="mb-4">
+                    Memes are often considered transformative works protected under fair use doctrine. However, each case is evaluated individually. We consider factors such as:
+                </p>
+                <ul class="space-y-3">
+                    <li>The purpose and character of the use</li>
+                    <li>The nature of the copyrighted work</li>
+                    <li>The amount used relative to the original work</li>
+                    <li>The effect on the market value of the original work</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-purple text-center">Repeat Infringers</h2>
+                <p>
+                    Users who repeatedly infringe copyright may have their accounts terminated. We maintain records of DMCA notices for this purpose.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-red-400 text-center">Designated Agent</h2>
+                <p class="mb-3">Send DMCA notices to:</p>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <p><strong class="text-neon-cyan">Email:</strong> dmca@memecommunity.com</p>
+                    <p><strong class="text-neon-cyan">Address:</strong> Meme Community, DMCA Agent</p>
+                    <p class="text-sm text-gray-400 mt-2">Please include "DMCA" in the subject line</p>
+                </div>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-cyan text-center">Contact</h2>
+                <p>
+                    For questions about our DMCA policy, please <a href="about.html" class="text-neon-cyan hover:text-neon-pink transition">contact us</a>.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neon-cyan/30 mt-16 py-8">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
+            <p>&copy; 2025 Meme Community. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Detail - Meme Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            pink: '#ff00ff',
+                            cyan: '#00ffff',
+                            green: '#00ff00',
+                            yellow: '#ffff00',
+                            purple: '#cc00ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-inter min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-neon-pink/30 sticky top-0 z-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-poppins font-bold bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-green bg-clip-text text-transparent">
+                    😂 Meme Community
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-neon-cyan transition">Home</a>
+                    <a href="categories.html" class="text-gray-300 hover:text-neon-cyan transition">Categories</a>
+                    <a href="search.html" class="text-gray-300 hover:text-neon-cyan transition">Search</a>
+                    <a href="profile.html" class="text-gray-300 hover:text-neon-cyan transition">Profile</a>
+                    <a href="login.html" class="text-gray-300 hover:text-neon-cyan transition">Login</a>
+                    <a href="about.html" class="text-gray-300 hover:text-neon-cyan transition">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-neon-cyan transition">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan" title="Toggle theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <a href="upload.html" class="bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+                </div>
+                <button class="lg:hidden text-neon-cyan text-2xl" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+        <!-- Mobile & Tablet Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-neon-pink/30 p-4 space-y-3">
+            <a href="index.html" class="block text-neon-cyan">Home</a>
+            <a href="categories.html" class="block text-gray-300">Categories</a>
+            <a href="search.html" class="block text-gray-300">Search</a>
+            <a href="profile.html" class="block text-gray-300">Profile</a>
+            <a href="login.html" class="block text-gray-300">Login</a>
+            <a href="about.html" class="block text-gray-300">About</a>
+            <a href="contact.html" class="block text-gray-300">Contact</a>
+            <button id="themeToggleMobile" class="block w-full text-left p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan">
+                <span id="themeIconMobile">🌙</span> Toggle Theme
+            </button>
+            <a href="upload.html" class="block w-full text-center bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Meme -->
+            <div class="lg:col-span-2">
+                <!-- Meme Image/Video -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 mb-6">
+                    <img id="memeImage" src="https://via.placeholder.com/800x800/ff00ff/ffffff?text=Meme" alt="Meme" class="w-full h-auto">
+                </div>
+
+                <!-- Meme Info -->
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-800 mb-6">
+                    <h1 id="memeTitle" class="text-3xl font-poppins font-bold mb-4 text-neon-cyan text-center">Meme Title</h1>
+                    
+                    <!-- Creator Profile -->
+                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-700">
+                        <div class="flex items-center space-x-4">
+                            <img id="creatorAvatar" src="https://via.placeholder.com/60" alt="Creator" class="w-16 h-16 rounded-full border-2 border-neon-cyan avatar-glow">
+                            <div>
+                                <a href="profile.html" id="creatorName" class="text-xl font-semibold text-neon-cyan hover:text-neon-pink transition">@creator_name</a>
+                                <p class="text-sm text-gray-400">Posted 2 hours ago</p>
+                            </div>
+                        </div>
+                        <button onclick="followCreator()" class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-purple rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">
+                            + Follow
+                        </button>
+                    </div>
+
+                    <!-- Stats & Actions -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center space-x-6">
+                            <button onclick="handleLike(1)" class="flex items-center space-x-2 text-gray-400 hover:text-neon-pink transition">
+                                <span class="text-2xl">❤️</span>
+                                <span id="likes-1" class="font-semibold">1,247</span>
+                            </button>
+                            <button onclick="handleUpvote(1)" class="flex items-center space-x-2 text-gray-400 hover:text-neon-green transition">
+                                <span class="text-2xl">⬆️</span>
+                                <span id="votes-1" class="font-semibold">892</span>
+                            </button>
+                            <button onclick="handleDownvote(1)" class="flex items-center space-x-2 text-gray-400 hover:text-red-400 transition">
+                                <span class="text-2xl">⬇️</span>
+                            </button>
+                            <button class="flex items-center space-x-2 text-gray-400 hover:text-neon-cyan transition">
+                                <span class="text-2xl">💬</span>
+                                <span id="commentCount" class="font-semibold">89</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="shareMeme('whatsapp', 1)" class="px-4 py-2 bg-green-600 hover:bg-green-500 rounded-lg transition flex items-center space-x-2">
+                                <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </button>
+                            <button onclick="shareMeme('twitter', 1)" class="px-4 py-2 bg-black hover:bg-gray-900 rounded-lg transition flex items-center space-x-2 border border-gray-700">
+                                <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                                <span>Share</span>
+                            </button>
+                            <button onclick="toggleSave(1)" id="save-btn-1" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition">🔖 Save</button>
+                            <button onclick="reportMeme()" class="px-4 py-2 bg-red-600 hover:bg-red-500 rounded-lg transition">🚫 Report</button>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-gray-800 text-neon-green text-sm hover:text-neon-cyan cursor-pointer">#monday</span>
+                        <span class="px-3 py-1 rounded-full bg-gray-800 text-neon-green text-sm hover:text-neon-cyan cursor-pointer">#relatable</span>
+                        <span class="px-3 py-1 rounded-full bg-gray-800 text-neon-green text-sm hover:text-neon-cyan cursor-pointer">#work</span>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                    <h2 class="text-2xl font-poppins font-bold mb-6 text-neon-pink text-center">💬 Comments</h2>
+                    
+                    <!-- Add Comment -->
+                    <div class="mb-6">
+                        <textarea id="commentInput" placeholder="Add a comment..." rows="3" 
+                            class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/50 transition mb-3"></textarea>
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-2">
+                                <button onclick="addEmoji('😂')" class="text-2xl hover:scale-125 transition">😂</button>
+                                <button onclick="addEmoji('🔥')" class="text-2xl hover:scale-125 transition">🔥</button>
+                                <button onclick="addEmoji('💀')" class="text-2xl hover:scale-125 transition">💀</button>
+                                <button onclick="addEmoji('❤️')" class="text-2xl hover:scale-125 transition">❤️</button>
+                            </div>
+                            <button onclick="submitComment()" class="px-6 py-2 bg-gradient-to-r from-neon-pink to-neon-purple rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">
+                                Post Comment
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div id="commentsList" class="space-y-4">
+                        <!-- Comments will be loaded here -->
+                        <div class="comment p-4 bg-gray-800 rounded-lg">
+                            <div class="flex items-start space-x-3">
+                                <img src="https://via.placeholder.com/40" alt="User" class="w-10 h-10 rounded-full">
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <span class="font-semibold text-neon-cyan">@user123</span>
+                                        <span class="text-xs text-gray-400">2 hours ago</span>
+                                    </div>
+                                    <p class="text-gray-300 mb-2">This is so relatable! 😂</p>
+                                    <div class="flex items-center space-x-4 text-sm">
+                                        <button class="text-gray-400 hover:text-neon-pink transition">❤️ 12</button>
+                                        <button class="text-gray-400 hover:text-neon-cyan transition">Reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Related Memes -->
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-800 mb-6">
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-neon-green text-center">🔗 Related Memes</h3>
+                    <div class="space-y-4">
+                        <a href="meme.html?id=2" class="block group">
+                            <div class="flex space-x-3">
+                                <img src="https://via.placeholder.com/100x100" alt="Related" class="w-24 h-24 rounded-lg object-cover group-hover:opacity-80 transition">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm group-hover:text-neon-cyan transition">Related Meme Title</p>
+                                    <p class="text-xs text-gray-400">456 likes</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Creator Stats -->
+                <div class="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-neon-pink text-center">📊 Creator Stats</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Memes</span>
+                            <span class="font-semibold text-neon-cyan">127</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Total Likes</span>
+                            <span class="font-semibold text-neon-pink">45.2K</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Karma Points</span>
+                            <span class="font-semibold text-neon-green">12,450</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Level</span>
+                            <span class="font-semibold text-neon-yellow">🔥 Level 42</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neon-cyan/30 mt-16 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-poppins font-bold text-neon-cyan mb-4">😂 Meme Community</h3>
+                    <p class="text-gray-400 text-sm">The funkiest meme community on the internet</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 text-neon-pink">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="categories.html" class="hover:text-neon-cyan transition">Categories</a></li>
+                        <li><a href="rules.html" class="hover:text-neon-cyan transition">Community Rules</a></li>
+                        <li><a href="about.html" class="hover:text-neon-cyan transition">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 text-neon-pink">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-neon-cyan transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-neon-cyan transition">Terms & Conditions</a></li>
+                        <li><a href="dmca.html" class="hover:text-neon-cyan transition">DMCA Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 text-neon-pink">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-green-500 transition group" title="WhatsApp">
+                            <svg class="w-6 h-6 fill-current text-gray-400 group-hover:text-white transition" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition group" title="Instagram">
+                            <svg class="w-6 h-6 fill-current text-gray-400 group-hover:text-white transition" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-black transition group" title="Twitter/X">
+                            <svg class="w-6 h-6 fill-current text-gray-400 group-hover:text-white transition" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-neon-pink/30 mt-8 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Meme Community. All rights reserved. Made with 😂 and neon vibes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/memeDetail.js"></script>
+</body>
+</html>
+
+

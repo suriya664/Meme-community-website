@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Meme Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            pink: '#ff00ff',
+                            cyan: '#00ffff',
+                            green: '#00ff00',
+                            yellow: '#ffff00',
+                            purple: '#cc00ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-inter min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-neon-pink/30 sticky top-0 z-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-poppins font-bold bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-green bg-clip-text text-transparent">
+                    😂 Meme Community
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-neon-cyan transition">Home</a>
+                    <a href="categories.html" class="text-gray-300 hover:text-neon-cyan transition">Categories</a>
+                    <a href="search.html" class="text-gray-300 hover:text-neon-cyan transition">Search</a>
+                    <a href="profile.html" class="text-gray-300 hover:text-neon-cyan transition">Profile</a>
+                    <a href="login.html" class="text-gray-300 hover:text-neon-cyan transition">Login</a>
+                    <a href="about.html" class="text-gray-300 hover:text-neon-cyan transition">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-neon-cyan transition">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan" title="Toggle theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <a href="upload.html" class="bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+                </div>
+                <button class="lg:hidden text-neon-cyan text-2xl" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+        <!-- Mobile & Tablet Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-neon-pink/30 p-4 space-y-3">
+            <a href="index.html" class="block text-neon-cyan">Home</a>
+            <a href="categories.html" class="block text-gray-300">Categories</a>
+            <a href="search.html" class="block text-gray-300">Search</a>
+            <a href="profile.html" class="block text-gray-300">Profile</a>
+            <a href="login.html" class="block text-gray-300">Login</a>
+            <a href="about.html" class="block text-gray-300">About</a>
+            <a href="contact.html" class="block text-gray-300">Contact</a>
+            <button id="themeToggleMobile" class="block w-full text-left p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan">
+                <span id="themeIconMobile">🌙</span> Toggle Theme
+            </button>
+            <a href="upload.html" class="block w-full text-center bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <h1 class="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent text-center">
+            📋 Terms & Conditions
+        </h1>
+
+        <div class="space-y-6 text-gray-300 leading-relaxed">
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <p class="text-sm text-gray-400 mb-4">Last updated: January 2024</p>
+                <p class="mb-4">
+                    By using Meme Community, you agree to be bound by these Terms & Conditions. Please read them carefully.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-cyan text-center">1. Acceptance of Terms</h2>
+                <p>
+                    By accessing or using our platform, you agree to comply with and be bound by these terms. If you disagree with any part of these terms, you may not use our service.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-green text-center">2. User Accounts</h2>
+                <ul class="space-y-3">
+                    <li>You are responsible for maintaining the confidentiality of your account</li>
+                    <li>You must provide accurate and complete information</li>
+                    <li>You are responsible for all activities under your account</li>
+                    <li>You must be at least 13 years old to use our service</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-yellow text-center">3. Content Guidelines</h2>
+                <p class="mb-3">You agree not to upload content that:</p>
+                <ul class="space-y-3">
+                    <li>Violates any laws or regulations</li>
+                    <li>Infringes on intellectual property rights</li>
+                    <li>Contains hate speech, harassment, or discrimination</li>
+                    <li>Is spam, misleading, or fraudulent</li>
+                    <li>Contains personal information of others without consent</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-purple text-center">4. Intellectual Property</h2>
+                <p class="mb-3">
+                    When you upload content to our platform:
+                </p>
+                <ul class="space-y-3">
+                    <li>You retain ownership of your original content</li>
+                    <li>You grant us a license to display, distribute, and use your content on our platform</li>
+                    <li>You represent that you have the right to share the content</li>
+                    <li>Memes are generally considered fair use, but you are responsible for ensuring compliance</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-red-400 text-center">5. Prohibited Activities</h2>
+                <p>You may not:</p>
+                <ul class="space-y-3 mt-3">
+                    <li>Use the platform for illegal activities</li>
+                    <li>Attempt to hack, disrupt, or damage our services</li>
+                    <li>Impersonate others or provide false information</li>
+                    <li>Use automated systems to interact with our platform without permission</li>
+                    <li>Collect user data without authorization</li>
+                </ul>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-cyan text-center">6. Termination</h2>
+                <p>
+                    We reserve the right to suspend or terminate your account if you violate these terms or engage in harmful behavior. You may also delete your account at any time.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-green text-center">7. Limitation of Liability</h2>
+                <p>
+                    We provide our service "as is" and are not liable for any damages resulting from your use of our platform. You use our service at your own risk.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-yellow text-center">8. Changes to Terms</h2>
+                <p>
+                    We may update these terms from time to time. Continued use of our platform after changes constitutes acceptance of the new terms.
+                </p>
+            </section>
+
+            <section class="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <h2 class="text-2xl font-poppins font-bold mb-4 text-neon-purple text-center">9. Contact</h2>
+                <p>
+                    For questions about these terms, please <a href="about.html" class="text-neon-cyan hover:text-neon-pink transition">contact us</a>.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neon-cyan/30 mt-16 py-8">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
+            <p>&copy; 2025 Meme Community. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

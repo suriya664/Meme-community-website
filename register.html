@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Meme Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            pink: '#ff00ff',
+                            cyan: '#00ffff',
+                            green: '#00ff00',
+                            yellow: '#ffff00',
+                            purple: '#cc00ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-inter min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-neon-pink/30 sticky top-0 z-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-poppins font-bold bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-green bg-clip-text text-transparent">
+                    😂 Meme Community
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-neon-cyan transition">Home</a>
+                    <a href="categories.html" class="text-gray-300 hover:text-neon-cyan transition">Categories</a>
+                    <a href="search.html" class="text-gray-300 hover:text-neon-cyan transition">Search</a>
+                    <a href="profile.html" class="text-gray-300 hover:text-neon-cyan transition">Profile</a>
+                    <a href="login.html" class="text-gray-300 hover:text-neon-cyan transition">Login</a>
+                    <a href="about.html" class="text-gray-300 hover:text-neon-cyan transition">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-neon-cyan transition">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan" title="Toggle theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <a href="upload.html" class="bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+                </div>
+                <button class="lg:hidden text-neon-cyan text-2xl" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+        <!-- Mobile & Tablet Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-neon-pink/30 p-4 space-y-3">
+            <a href="index.html" class="block text-gray-300">Home</a>
+            <a href="categories.html" class="block text-gray-300">Categories</a>
+            <a href="search.html" class="block text-gray-300">Search</a>
+            <a href="profile.html" class="block text-gray-300">Profile</a>
+            <a href="login.html" class="block text-gray-300">Login</a>
+            <a href="about.html" class="block text-gray-300">About</a>
+            <a href="contact.html" class="block text-gray-300">Contact</a>
+            <button id="themeToggleMobile" class="block w-full text-left p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-neon-cyan">
+                <span id="themeIconMobile">🌙</span> Toggle Theme
+            </button>
+            <a href="upload.html" class="block w-full text-center bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-pink/50 transition">Upload Meme</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-[calc(100vh-80px)] flex items-center py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                <!-- Left Side - Branding -->
+                <div class="hidden lg:block space-y-8">
+                    <div class="space-y-6">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-neon-pink via-neon-purple to-neon-cyan flex items-center justify-center text-4xl shadow-lg shadow-neon-pink/50">
+                            😂
+                        </div>
+                        <div>
+                            <h1 class="text-5xl font-poppins font-bold mb-4">
+                                <span class="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">Join the</span>
+                                <span class="bg-gradient-to-r from-neon-cyan to-neon-green bg-clip-text text-transparent"> Fun!</span>
+                            </h1>
+                            <p class="text-xl text-gray-300 leading-relaxed">
+                                Create your account and start sharing hilarious memes with the funkiest community on the internet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="flex items-center space-x-3 text-gray-400">
+                            <span class="text-2xl">✨</span>
+                            <span>Create and share your memes</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-400">
+                            <span class="text-2xl">🏆</span>
+                            <span>Earn karma and climb the leaderboard</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-400">
+                            <span class="text-2xl">💬</span>
+                            <span>Connect with meme creators worldwide</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-400">
+                            <span class="text-2xl">🎨</span>
+                            <span>Discover trending memes daily</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Registration Form -->
+                <div class="w-full">
+                    <div class="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-2xl p-8 md:p-10 border border-neon-cyan/20 shadow-2xl shadow-neon-pink/10">
+                        <!-- Mobile Branding -->
+                        <div class="lg:hidden text-center mb-8">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-pink via-neon-purple to-neon-cyan flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg shadow-neon-pink/50">
+                                😂
+                            </div>
+                            <h1 class="text-3xl font-poppins font-bold mb-2">
+                                <span class="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">Join the</span>
+                                <span class="bg-gradient-to-r from-neon-cyan to-neon-green bg-clip-text text-transparent"> Fun!</span>
+                            </h1>
+                            <p class="text-gray-400">Create your account and start sharing memes</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-3xl font-poppins font-bold mb-2 text-center">
+                                <span class="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">Create Account</span>
+                            </h2>
+                            <p class="text-gray-400 text-center">Fill in your details to get started</p>
+                        </div>
+
+                        <form id="registerForm" class="space-y-5">
+                            <div>
+                                <label for="username" class="block text-sm font-semibold mb-2 text-neon-pink">
+                                    <span class="flex items-center space-x-2">
+                                        <span>👤</span>
+                                        <span>Username</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="username" placeholder="Choose a unique username" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/50 transition placeholder-gray-500">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold mb-2 text-neon-pink">
+                                    <span class="flex items-center space-x-2">
+                                        <span>📧</span>
+                                        <span>Email</span>
+                                    </span>
+                                </label>
+                                <input type="email" id="email" placeholder="Enter your email address" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/50 transition placeholder-gray-500">
+                            </div>
+
+                            <div>
+                                <label for="password" class="block text-sm font-semibold mb-2 text-neon-pink">
+                                    <span class="flex items-center space-x-2">
+                                        <span>🔒</span>
+                                        <span>Password</span>
+                                    </span>
+                                </label>
+                                <input type="password" id="password" placeholder="Create a strong password" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/50 transition placeholder-gray-500">
+                                <p class="text-xs text-gray-500 mt-2 flex items-center space-x-1">
+                                    <span>💡</span>
+                                    <span>Must be at least 8 characters with letters and numbers</span>
+                                </p>
+                            </div>
+
+                            <div>
+                                <label for="confirmPassword" class="block text-sm font-semibold mb-2 text-neon-pink">
+                                    <span class="flex items-center space-x-2">
+                                        <span>🔐</span>
+                                        <span>Confirm Password</span>
+                                    </span>
+                                </label>
+                                <input type="password" id="confirmPassword" placeholder="Re-enter your password" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/50 transition placeholder-gray-500">
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
+                                <input type="checkbox" id="terms" required class="w-5 h-5 text-neon-pink rounded bg-gray-800 border-gray-700 focus:ring-neon-pink mt-0.5">
+                                <label for="terms" class="text-sm text-gray-300 leading-relaxed">
+                                    I agree to the <a href="terms.html" class="text-neon-cyan hover:text-neon-pink transition font-semibold">Terms & Conditions</a> 
+                                    and <a href="privacy.html" class="text-neon-cyan hover:text-neon-pink transition font-semibold">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-neon-pink to-neon-purple px-6 py-4 rounded-lg font-bold text-lg hover:shadow-lg hover:shadow-neon-pink/50 transition transform hover:scale-[1.02] active:scale-[0.98]">
+                                ✨ Create Account
+                            </button>
+                        </form>
+
+                        <div class="relative my-8">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-700"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-gray-400">Or sign up with</span>
+                            </div>
+                        </div>
+
+                        <button onclick="registerWithGoogle()" class="w-full bg-white/10 hover:bg-white/20 border border-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center justify-center space-x-3 mb-6">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span>Continue with Google</span>
+                        </button>
+
+                        <p class="text-center text-gray-400 text-sm">
+                            Already have an account? 
+                            <a href="login.html" class="text-neon-cyan hover:text-neon-pink transition font-semibold">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long!');
+                return;
+            }
+            
+            // Simulate registration
+            alert('Account created successfully! Redirecting to login...');
+            window.location.href = 'login.html';
+        });
+
+        function registerWithGoogle() {
+            alert('Google registration - Integration required');
+            // In production, implement OAuth
+        }
+    </script>
+</body>
+</html>
